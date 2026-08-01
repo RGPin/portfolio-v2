@@ -5,10 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>Portfolio</title>
-    <script src="js/main.js" defer></script>
+    <script src="main.js" defer type="module"></script>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>Hello world</h1>
+    <header>
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#projects">PROJECTS</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="about" id="about">
+      <section class="intro" aria-labelledby="intro-heading">
+        <h1 id="intro-heading">I am Lorem Ipsum</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia eum
+          cupiditate quasi eos vero voluptatum a sit odit, maiores aliquam
+          quidem non beatae minima neque porro minus qui debitis facere.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad,
+          suscipit a nostrum nam laboriosam!
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <nav aria-label="Social Links">
+        <ul>
+          <li>
+            <a
+              id="github-link"
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >
+          </li>
+          <li>
+            <a
+              id="linkedin-link"
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <address>
+        Email:
+        <a id="email-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          >real@email.com</a
+        >
+      </address>
+    </footer>
   </body>
 </html>
