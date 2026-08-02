@@ -16,3 +16,18 @@ export function revealLink(element, realHref, realText) {
 
   return element;
 }
+
+/**
+ * mutate href
+ *
+ * @param {HTMLElement} element - The DOM node to update.
+ * @param {string} realHref - The actual URL.
+ * @returns {HTMLElement} The updated element.
+ */
+export function revealResume(element, realHref) {
+  if (!element) return null;
+
+  element.href = realHref;
+  element.setAttribute("download", "Resume.pdf");
+  return element;
+}

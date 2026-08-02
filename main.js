@@ -1,20 +1,22 @@
-import { revealLink } from "./js/contact-mutation.js";
+import { revealLink, revealResume } from "./js/contact-mutation.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const linkConfigs = [
     {
       id: "email-link",
-      href: "mailto:lalalala@gmail.com",
-      text: "lalalala@gmail.com",
+      href: atob("bWFpbHRvOnBpbm9zYW5yZ0BnbWFpbC5jb20="),
+      text: atob("cGlub3NhbnJnQGdtYWlsLmNvbQ=="),
     },
     {
       id: "linkedin-link",
-      href: "https://www.linkedin.com/in/wewewewewewewe",
+      href: atob(
+        "aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL3J5Z2VsLXBpbm9zYW4tNjE1NzkyMmJhLw==",
+      ),
       text: null,
     },
     {
       id: "github-link",
-      href: "https://github.com/oogabooga",
+      href: atob("aHR0cHM6Ly9naXRodWIuY29tL1JHUGlu"),
       text: null,
     },
   ];
@@ -49,4 +51,22 @@ document.addEventListener("DOMContentLoaded", () => {
       { once: true },
     );
   });
+
+  const resumeLink = document.querySelector("#resume-link");
+
+  const revealResumeFn = () => revealResume(resumeLink, "/files/Resume.pdf");
+
+  resumeLink.addEventListener("mouseenter", revealResumeFn, { once: true });
+  resumeLink.addEventListener("focus", revealResumeFn, { once: true });
+
+  resumeLink.addEventListener(
+    "click",
+    (e) => {
+      e.preventDefault();
+
+      revealResumeFn();
+      resumeLink.click();
+    },
+    { once: true },
+  );
 });
