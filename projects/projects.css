@@ -43,7 +43,14 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   line-height: 1.6;
   color: var(--color-text-primary);
   background-color: var(--color-bg);
@@ -97,7 +104,9 @@ body {
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-sm);
   background-color: #f9f9f9;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .project-card:hover {
@@ -198,4 +207,57 @@ body {
   display: inline-block;
   margin-top: var(--space-xs);
   font-weight: 500;
+}
+
+.server-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #666;
+  margin-left: auto;
+}
+
+.status-dot,
+.demo-status-dot {
+  border-radius: 50%;
+  background-color: #888;
+  transition: background-color 0.3s ease;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+}
+.demo-status-dot {
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.online {
+  background-color: #4caf50 !important;
+}
+
+.waking {
+  background-color: #ff9800 !important;
+  animation: pulse 1.5s infinite;
+}
+
+.offline {
+  background-color: #f44336 !important;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
 }

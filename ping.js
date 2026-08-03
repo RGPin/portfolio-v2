@@ -1,9 +1,27 @@
 const backends = [
-  "https://project1.onrender.com/api/ping",
-  "https://project2.onrender.com/api/ping",
-  "https://project3.onrender.com/api/ping",
-  "https://project4.onrender.com/api/ping",
+  "https://top-blog-api-dgjh.onrender.com/api/ping",
+  "https://top-file-uploader-6oxo.onrender.com/api/ping",
+  "https://top-inventory.onrender.com/api/ping",
+  "https://top-members-only-ynk9.onrender.com/api/ping",
 ];
+
+// 1. Initialize state tracker
+const backendStates = backends.reduce((acc, url) => {
+  acc[url] = "waking"; // Assume waking on first load
+  return acc;
+}, {});
+
+// Expose to window so the UI can read it on load
+window.__BACKEND_STATES__ = backendStates;
+
+// 2. Helper to broadcast state to the UI
+function emitStatusUpdate() {
+  window.dispatchEvent(
+    new CustomEvent("backend-status-update", {
+      detail: { ...backendStates },
+    }),
+  );
+}
 
 async function pingBackend(url) {
   let endTime = Date.now() + 30 * 60 * 1000;
@@ -33,6 +51,7 @@ async function pingBackend(url) {
       continue;
     }
 
+    let currentState = "waking";
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 10000);
 
@@ -45,16 +64,22 @@ async function pingBackend(url) {
       clearTimeout(timeout);
 
       if (res.ok) {
-        console.log(`${url} is awake`);
+        currentState = "online";
         delay = 10 * 60 * 1000;
       } else {
-        console.log(`${url} returned ${res.status}`);
+        currentState = "offline";
         delay = 3000;
       }
     } catch (err) {
       clearTimeout(timeout);
-      console.log(`${url} unreachable`);
+      currentState = "offline";
       delay = 3000;
+    }
+
+    // 3. Update state and emit ONLY if it changed
+    if (backendStates[url] !== currentState) {
+      backendStates[url] = currentState;
+      emitStatusUpdate();
     }
 
     const remaining = endTime - Date.now();
@@ -66,7 +91,11 @@ async function pingBackend(url) {
   }
 
   document.removeEventListener("visibilitychange", extendTimer);
-  console.log(`${url}: stopped`);
+  if (backendStates[url] !== "offline") {
+    backendStates[url] = "offline";
+    emitStatusUpdate();
+  }
 }
 
+emitStatusUpdate();
 backends.forEach(pingBackend);
