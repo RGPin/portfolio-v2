@@ -1,11 +1,12 @@
 import { revealLink } from "../js/contact-mutation.js";
+import { PROJECTS } from "./projects-data.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const linkConfigs = [
     {
       id: "email-link",
       href: "mailto:lalalala@gmail.com",
-      text: "lalalala@gmail.com",
+      text: "lal_alala@gmail.com",
     },
     {
       id: "linkedin-link",
@@ -49,4 +50,30 @@ document.addEventListener("DOMContentLoaded", () => {
       { once: true },
     );
   });
+
+  const projectsContainer = document.querySelector(".projects");
+  if (projectsContainer) {
+    projectsContainer.innerHTML = PROJECTS.map(project => `
+      <article class="project-card">
+        <div class="project-content">
+          <h2 class="project-title">${project.title}</h2>
+          <p class="project-type">${project.type}</p>
+          <p class="project-description">${project.description}</p>
+          <div class="project-stack">
+            <span class="stack-label">Core Stack:</span>
+            ${project.coreStack.map(tech => `<span class="stack-item">${tech}</span>`).join(", ")}
+          </div>
+          <div class="project-extra">
+            <span class="stack-label">Additional Tools:</span>
+            ${project.additionalTools.map(tool => `<span class="stack-item">${tool}</span>`).join(", ")}
+          </div>
+          <div class="project-links">
+            <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a>
+            <a href="${project.liveDemo}" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo</a>
+          </div>
+        </div>
+      </article>
+    `).join("");
+  }
 });
+
