@@ -84,17 +84,38 @@ body {
   flex: 1;
 }
 
+.intro {
+  color: var(--color-text-primary);
+}
+
 .intro p {
   margin-bottom: var(--space-md);
   font-size: var(--font-size-lg);
 }
 
-.intro p:last-child {
+.outro p:last-child {
   margin-bottom: 0;
 }
 
+.currently-learning,
+.learning-list {
+  margin: 0;
+  padding: 0;
+}
+
+.learning-list {
+  margin-left: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+.currently-learning,
+.learning-list,
+.outro p {
+  color: var(--color-text-muted);
+}
+
 .footer {
-  margin-top: var(--space-2xl);
+  margin-top: var(--space-md);
   padding-top: var(--space-lg);
   border-top: 1px solid var(--color-border);
   display: flex;

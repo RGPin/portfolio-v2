@@ -2,7 +2,7 @@ export const PROJECTS = [
   {
     title: "Full-Stack Blog Platform",
     description:
-      "A secure blog application with JWT authentication. Logged-in users can create, read, update, and delete their own posts and comments, while guests have read-only access.",
+      "Full-stack blogging platform with JWT authentication using rotating refresh tokens stored in HttpOnly cookies and in-memory access tokens. Includes separate interfaces for authenticated users and public visitors.",
     type: "Full-Stack Web Application",
     coreStack: ["React", "TypeScript", "Node.js", "PostgreSQL"],
     additionalTools: ["Express", "Prisma", "TanStack Query", "Zustand", "Vite"],
@@ -12,9 +12,9 @@ export const PROJECTS = [
   },
 
   {
-    title: "Secure File Hosting Platform",
+    title: "File Hosting Platform",
     description:
-      "A robust, full-stack file management application enabling users to safely upload, store, and retrieve digital assets. Features secure email and password authentication with industry-standard encryption, ensuring strict data privacy and isolated access control for all user files.",
+      "A file hosting application with isolated user storage using Supabase Storage, session-based authentication, and password hashing with bcrypt.",
     type: "Full-Stack Web Application",
     coreStack: ["React", "JavaScript", "Node.js", "PostgreSQL", "Supabase"],
     additionalTools: ["Express", "Zustand"],
@@ -26,7 +26,7 @@ export const PROJECTS = [
   {
     title: "Members-Only Community Platform",
     description:
-      "A secure, server-side rendered (SSR) web application featuring role-based access control. Guest users can browse anonymized community content, while authenticated members gain full privileges to publish, manage, and delete their own posts. Built with a robust Node.js backend and EJS templating for fast, SEO-friendly page loads and seamless data rendering.",
+      "Server-side rendered (SSR) community platform built with Express and EJS featuring authentication-based content visibility and authenticated CRUD operations. Guest users can browse anonymized community content, while authenticated members gain full privileges to publish, manage, and delete their own posts.",
     type: "Full-Stack Web Application",
     coreStack: ["HTML", "CSS", "JavaScript", "Node.js", "PostgreSQL"],
     additionalTools: ["Express", "EJS"],
@@ -38,7 +38,7 @@ export const PROJECTS = [
   {
     title: "PC Component Inventory Dashboard",
     description:
-      "A streamlined, full-stack inventory management system designed for tracking computer hardware. Features comprehensive CRUD (Create, Read, Update, Delete) operations, enabling efficient categorization, detailed part viewing, and real-time updates to stock levels and pricing. Built with a focus on data integrity and administrative efficiency using a robust Node.js and PostgreSQL backend.",
+      "A full-stack inventory management dashboard system implementing the MVC architecture with PostgreSQL-backed CRUD operations for tracking computer hardware.",
     type: "Full-Stack Web Application",
     coreStack: ["HTML", "CSS", "JavaScript", "Node.js", "PostgreSQL"],
     additionalTools: ["Express", "EJS"],
@@ -46,9 +46,16 @@ export const PROJECTS = [
     liveDemo: "https://top-inventory.onrender.com",
     backend: "https://top-inventory.onrender.com/api/ping",
   },
+
   /*FROM QWEN:
   "This project was designed specifically as a streamlined internal administration dashboard. 
   My primary focus was on optimizing the CRUD operations, database relationships, and UI efficiency 
   for rapid data entry and inventory tracking, rather than over-engineering it with user roles for a 
   single-admin use case." */
 ];
+
+// other description:
+// "A secure blog application with JWT authentication. Logged-in users can create, read, update, and delete their own posts and comments, while guests have read-only access.",
+// "A robust, full-stack file management application enabling users to safely upload, store, and retrieve digital assets. Features secure email and password authentication with industry-standard encryption, ensuring strict data privacy and isolated access control for all user files.",
+// "A secure, server-side rendered (SSR) web application featuring authentication-based access control. Guest users can browse anonymized community content, while authenticated members gain full privileges to publish, manage, and delete their own posts. Built with a robust Node.js backend and EJS templating for fast, SEO-friendly page loads and seamless data rendering.",
+// "A streamlined, full-stack inventory management system designed for tracking computer hardware. Features comprehensive CRUD (Create, Read, Update, Delete) operations, enabling efficient categorization, detailed part viewing, and real-time updates to stock levels and pricing. Built with a focus on data integrity and administrative efficiency using a robust Node.js and PostgreSQL backend.",
