@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="project-links">
             <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a>
             <a href="${project.liveDemo}" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo
-            <span class="demo-status-dot" data-backend="${project.backendUrl}"></span></a>
+            <span class="demo-status-dot" data-backend="${project.backend}"></span></a>
             
           </div>
         </div>

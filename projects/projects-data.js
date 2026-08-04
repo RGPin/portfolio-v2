@@ -8,6 +8,7 @@ export const PROJECTS = [
     additionalTools: ["Express", "Prisma", "TanStack Query", "Zustand", "Vite"],
     link: "https://github.com/RGPin/top-blog-api",
     liveDemo: "https://blog-client.pinosanrg.workers.dev",
+    backend: "https://top-blog-api-dgjh.onrender.com/api/ping",
   },
 
   {
@@ -19,6 +20,7 @@ export const PROJECTS = [
     additionalTools: ["Express", "Zustand"],
     link: "https://github.com/RGPin/top-file-uploader",
     liveDemo: "https://top-file-uploader.pinosanrg.workers.dev",
+    backend: "https://top-file-uploader-6oxo.onrender.com/api/ping",
   },
 
   {
@@ -30,6 +32,7 @@ export const PROJECTS = [
     additionalTools: ["Express", "EJS"],
     link: "https://github.com/RGPin/top-members-only",
     liveDemo: "https://top-members-only-ynk9.onrender.com",
+    backend: "https://top-members-only-ynk9.onrender.com/api/ping",
   },
 
   {
@@ -41,6 +44,7 @@ export const PROJECTS = [
     additionalTools: ["Express", "EJS"],
     link: "https://github.com/RGPin/top-inventory",
     liveDemo: "https://top-inventory.onrender.com",
+    backend: "https://top-inventory.onrender.com/api/ping",
   },
   /*FROM QWEN:
   "This project was designed specifically as a streamlined internal administration dashboard. 
