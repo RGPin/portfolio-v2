@@ -6,8 +6,8 @@ export const PROJECTS = [
     type: "Full-Stack Web Application",
     coreStack: ["React", "TypeScript", "Node.js", "PostgreSQL"],
     additionalTools: ["Express", "Prisma", "TanStack Query", "Zustand", "Vite"],
-    link: "https://github.com/yourusername/blog",
-    liveDemo: "https://blog-demo.com",
+    link: "https://github.com/RGPin/top-blog-api",
+    liveDemo: "https://blog-client.pinosanrg.workers.dev",
   },
 
   {
@@ -17,8 +17,8 @@ export const PROJECTS = [
     type: "Full-Stack Web Application",
     coreStack: ["React", "JavaScript", "Node.js", "PostgreSQL", "Supabase"],
     additionalTools: ["Express", "Zustand"],
-    link: "https://github.com/yourusername/file-uploader",
-    liveDemo: "https://file-uploader-demo.com",
+    link: "https://github.com/RGPin/top-file-uploader",
+    liveDemo: "https://top-file-uploader.pinosanrg.workers.dev",
   },
 
   {
@@ -28,8 +28,8 @@ export const PROJECTS = [
     type: "Full-Stack Web Application",
     coreStack: ["HTML", "CSS", "JavaScript", "Node.js", "PostgreSQL"],
     additionalTools: ["Express", "EJS"],
-    link: "https://github.com/yourusername/members-only",
-    liveDemo: "https://members-only-demo.com",
+    link: "https://github.com/RGPin/top-members-only",
+    liveDemo: "https://top-members-only-ynk9.onrender.com",
   },
 
   {
@@ -39,8 +39,8 @@ export const PROJECTS = [
     type: "Full-Stack Web Application",
     coreStack: ["HTML", "CSS", "JavaScript", "Node.js", "PostgreSQL"],
     additionalTools: ["Express", "EJS"],
-    link: "https://github.com/yourusername/pc-inventory",
-    liveDemo: "https://pc-inventory-demo.com",
+    link: "https://github.com/RGPin/top-inventory",
+    liveDemo: "https://top-inventory.onrender.com",
   },
   /*FROM QWEN:
   "This project was designed specifically as a streamlined internal administration dashboard. 
