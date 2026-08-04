@@ -40,10 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
       statusText.textContent = "APIs Online";
     } else if (stateValues.some((s) => s === "waking")) {
       statusDot.className = "status-dot waking";
-      statusText.textContent = "Waking up servers...";
+      statusText.textContent =
+        "Waking up servers (may take at least 10 seconds)";
     } else {
       statusDot.className = "status-dot offline";
-      statusText.textContent = "APIs Unreachable";
+      statusText.textContent =
+        "APIs Unreachable, please try refreshing the page";
     }
 
     document.querySelectorAll(".demo-status-dot").forEach((dot) => {
