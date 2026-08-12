@@ -53,7 +53,7 @@ async function pingBackend(url) {
 
     let currentState = "waking";
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 10000);
+    const timeout = setTimeout(() => controller.abort(), 20000);
 
     try {
       const res = await fetch(url, {
