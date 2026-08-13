@@ -1,3 +1,5 @@
+// ping.js
+
 const backends = [
   "https://top-blog-api-dgjh.onrender.com/api/ping",
   "https://top-file-uploader-6oxo.onrender.com/api/ping",
@@ -53,7 +55,13 @@ async function pingBackend(url) {
 
     let currentState = "waking";
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 20000);
+
+    // FIX: Dynamic timeout
+    // Render cold starts can take 30-60s. We give it 60s on the first "waking" ping.
+    // Once it's "online", subsequent health checks only need a 15s timeout.
+    const isWaking = backendStates[url] === "waking";
+    const timeoutDuration = isWaking ? 60000 : 15000;
+    const timeout = setTimeout(() => controller.abort(), timeoutDuration);
 
     try {
       const res = await fetch(url, {
